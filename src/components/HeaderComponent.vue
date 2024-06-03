@@ -3,4 +3,9 @@ export default{
     name:"Header"
 }
 </script>
-<template></template>
+<template>
+<!-- HEADER -->
+  <!-- title -->
+  <!-- search bar -->
+<!-- /HEADER -->
+</template>

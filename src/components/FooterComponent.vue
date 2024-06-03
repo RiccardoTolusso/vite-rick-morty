@@ -3,4 +3,8 @@ export default{
     name:"Footer"
 }
 </script>
-<template></template>
+<template>
+<!-- FOOTER -->
+  <!-- numero di personaggi trovati -->
+<!-- /FOOTER -->
+</template>
