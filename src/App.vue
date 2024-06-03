@@ -1,5 +1,6 @@
 <script>
 import { store } from "./storage"
+import axios from 'axios'
 
 export default{
   name:"MyApp",
@@ -9,7 +10,9 @@ export default{
     }
   },
   created(){
-    
+    axios.get('https://rickandmortyapi.com/api/character').then((result) => {
+      this.store.rickAndMortyData = result.data.results
+    })
   }
 }
 </script>
