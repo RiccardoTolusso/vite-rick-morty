@@ -1,4 +1,18 @@
-<!-- <script></script> -->
+<script>
+import { store } from "./storage"
+
+export default{
+  name:"MyApp",
+  data(){
+    return {
+      store
+    }
+  },
+  created(){
+    
+  }
+}
+</script>
 <template>
 <!-- HEADER -->
   <!-- title -->
