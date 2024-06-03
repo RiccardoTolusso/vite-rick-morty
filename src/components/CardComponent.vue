@@ -41,6 +41,7 @@ export default{
             width: 100%;   
             margin-top: auto;      
             margin-bottom: 1.875rem; 
+            text-transform: capitalize;
         }
     }
 </style>
