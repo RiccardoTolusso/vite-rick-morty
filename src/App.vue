@@ -1,7 +1,9 @@
 <script>
+// IMPORTS
 import { store } from "./storage"
 import axios from 'axios'
 
+// EXPORT
 export default{
   name:"MyApp",
   data(){
