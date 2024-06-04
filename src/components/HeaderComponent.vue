@@ -15,6 +15,8 @@ export default{
 <!-- /HEADER -->
 <header>
   <h1>Rick and Morty App</h1>
+
+  <SearchBarComponent />
 </header>
 </template>
 
@@ -26,7 +28,7 @@ header{
   text-align: center;
 
   h1{
-    line-height: 3;
+    line-height: 2;
     font-size: $font-size-h1;
   }
 

@@ -20,18 +20,15 @@ export default{
 <style lang="scss" scoped>
 @import "../assets/scss/partials/variables";
 .search-bar{
-    position: sticky;
-    top: 0;
     text-align: center;
-    margin-bottom: 2rem;
-    padding: 1rem 0;
-    z-index: 1;
+    margin-bottom: 1rem;
     *{
         border-radius: $round-value;
         padding: .3rem .5rem;
         margin: 0 .9375rem;
         border: 0.5px solid gray;
         font-size: $font-size-h3;
+        margin-bottom: 1rem;
     }
     button{
         border: none;

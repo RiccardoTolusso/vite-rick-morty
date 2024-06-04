@@ -34,8 +34,17 @@ export default{
 }
 </script>
 <template>
-<HeaderComponent/>
-<MainComponent/>
-<FooterComponent/>
+<div id="view">
+
+  <HeaderComponent/>
+  <MainComponent/>
+  <FooterComponent/>
+</div>
 </template>
-<!-- <style></style> -->
+<style lang="scss" scoped>
+#view{
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+}
+</style>
