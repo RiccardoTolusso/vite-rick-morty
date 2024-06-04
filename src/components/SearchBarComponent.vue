@@ -10,7 +10,10 @@ export default{
     },
     methods: {
         search(){
-            this.store.searchButtonClicked = true;
+            this.$emit('search')
+        },
+        reset(){
+            this.$emit("reset")
         }
     }
 }
@@ -25,7 +28,7 @@ export default{
             <option value="undefined">Undefined</option>
         </select>
         <button class="search" @click="search">Search</button>
-        <button class="reset">Reset</button>
+        <button class="reset" @click="reset">Reset</button>
     </div>
 </template>
 

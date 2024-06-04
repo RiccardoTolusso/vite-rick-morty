@@ -12,7 +12,5 @@ export const store = reactive({
     // api calls settings
     apiUrl: 'https://rickandmortyapi.com/api/character',
 
-    // search button
-    searchButtonClicked: false,
 
 })

@@ -22,9 +22,7 @@ export default{
     }
   },
   created(){
-    axios.get(this.store.apiUrl).then((result) => {
-      this.store.rickAndMortyData = result.data.results
-    })
+    this.apiCall()
   },
   components: {
     HeaderComponent,
@@ -32,26 +30,40 @@ export default{
     FooterComponent
   },
   methods:{
-    generateUrl(){
-      console.log("ciao")
-    },
+    apiCall(){
+      let url = this.store.apiUrl;
+      let params = {}
+      if (this.store.inputName !== ""){
+        params['name'] = this.store.inputName; 
+      }
+      if (this.store.inputStatus !== "all"){
+        params['status'] = this.store.inputStatus;
+      }
+      axios.get(url, {params})
+      .then((result) => {
+        console.log(result)
+        this.store.rickAndMortyData = result.data.results
+      }).catch((e) => {
+        this.reset()
+      })
+    },   
     search(){
       console.log("sto cercando")
+      this.apiCall()
+    },
+    reset(){
+      console.log("reset in corso")
+      this.store.inputName = "",
+      this.store.inputStatus = "all",
+      this.search()
     }
   },
-  beforeUpdate(){
-    console.log("qui")
-    if (this.store.searchButtonClicked){
-      this.search();
-      this.store.searchButtonClicked = false;
-    }
-  }
 }
 </script>
 <template>
 <div id="view">
 
-  <HeaderComponent/>
+  <HeaderComponent @search="search" @reset="reset"/>
   <MainComponent/>
   <FooterComponent/>
 </div>

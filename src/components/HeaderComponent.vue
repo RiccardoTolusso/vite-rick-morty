@@ -5,6 +5,14 @@ export default{
     name:"Header",
     components:{
       SearchBarComponent
+    }, 
+    methods:{
+      search(){
+        this.$emit('search')
+      },
+      reset(){
+          this.$emit("reset")
+      }
     }
 }
 </script>
@@ -16,7 +24,7 @@ export default{
 <header>
   <h1>Rick and Morty App</h1>
 
-  <SearchBarComponent />
+  <SearchBarComponent @search="search" @reset="reset"/>
 </header>
 </template>
 
