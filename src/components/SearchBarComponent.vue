@@ -10,10 +10,13 @@ export default{
     },
     methods: {
         search(){
-            this.$emit('search')
+            this.$emit('update')
         },
         reset(){
-            this.$emit("reset")
+            this.store.inputName = "";
+            this.store.inputStatus = "all";
+            this.store.currentPage = 1;
+            this.$emit("update")
         }
     }
 }

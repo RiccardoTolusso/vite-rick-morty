@@ -32,7 +32,9 @@ export default{
   methods:{
     apiCall(){
       let url = this.store.apiUrl;
-      let params = {}
+      let params = {
+        page: this.store.currentPage
+      }
       if (this.store.inputName !== ""){
         params['name'] = this.store.inputName; 
       }
@@ -45,18 +47,11 @@ export default{
         this.store.rickAndMortyData = result.data.results;
         this.store.rickAndMortyInfo = result.data.info;
       }).catch((e) => {
-        this.reset()
+        this.store.rickAndMortyData = []
       })
     },   
-    search(){
-      console.log("sto cercando")
+    update(){
       this.apiCall()
-    },
-    reset(){
-      console.log("reset in corso")
-      this.store.inputName = "",
-      this.store.inputStatus = "all",
-      this.search()
     }
   },
 }
@@ -64,9 +59,9 @@ export default{
 <template>
 <div id="view">
 
-  <HeaderComponent @search="search" @reset="reset"/>
+  <HeaderComponent @update="update" />
   <MainComponent/>
-  <FooterComponent/>
+  <FooterComponent @update="update"/>
 </div>
 </template>
 <style lang="scss" scoped>

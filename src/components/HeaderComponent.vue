@@ -7,11 +7,8 @@ export default{
       SearchBarComponent
     }, 
     methods:{
-      search(){
-        this.$emit('search')
-      },
-      reset(){
-          this.$emit("reset")
+      update(){
+        this.$emit('update')
       }
     }
 }
@@ -24,7 +21,7 @@ export default{
 <header>
   <h1>Rick and Morty App</h1>
 
-  <SearchBarComponent @search="search" @reset="reset"/>
+  <SearchBarComponent @update="update"/>
 </header>
 </template>
 

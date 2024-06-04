@@ -24,7 +24,7 @@ export default{
 <!-- MAIN -->
 <main>
     <div class="grid">
-        <CardComponent v-for="character in store.rickAndMortyData" :character="character" :key="`key-${character.name}`"/>
+        <CardComponent v-for="(character, id) in store.rickAndMortyData" :character="character" :key="`key-${id}`"/>
     </div>
 </main>
 <!-- /MAIN -->
