@@ -42,7 +42,8 @@ export default{
       axios.get(url, {params})
       .then((result) => {
         console.log(result)
-        this.store.rickAndMortyData = result.data.results
+        this.store.rickAndMortyData = result.data.results;
+        this.store.rickAndMortyInfo = result.data.info;
       }).catch((e) => {
         this.reset()
       })
