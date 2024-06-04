@@ -26,7 +26,7 @@ export default{
     
     <SearchBarComponent />
     <div class="grid">
-        <CardComponent v-for="character in store.rickAndMortyData" :character="character"/>
+        <CardComponent v-for="character in store.rickAndMortyData" :character="character" :key="`key-${character.name}`"/>
     </div>
 </main>
 <!-- /MAIN -->
@@ -36,7 +36,7 @@ export default{
 main{
     width: 90vw;
     margin: 0 auto;
-    padding: 2rem 0;
+    padding-bottom: 2rem;
 }
 .grid{
     display: flex;

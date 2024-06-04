@@ -5,5 +5,8 @@ COMMON
 @use './variables' as *;
 
 body {
-  background-color: $body-bg-color;
+  background-size: 30px 30px;
+  background-image: 
+    linear-gradient(90deg,#eaeaea8c 0 50%, transparent 50% 100%),
+    linear-gradient(#eaeaea8c 0 50%, transparent 50% 100%);
 }
