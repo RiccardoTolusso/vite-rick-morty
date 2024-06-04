@@ -1,5 +1,18 @@
 import { reactive } from "vue";
 
 export const store = reactive({
-    rickAndMortyData: []
+    // api call data received
+    rickAndMortyData: [],
+    rickAndMortyInfo: {},
+
+    // input fields values
+    inputName: "",
+    inputStatus: "all",
+
+    // api calls settings
+    apiUrl: 'https://rickandmortyapi.com/api/character',
+
+    // search button
+    searchButtonClicked: false,
+
 })

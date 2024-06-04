@@ -1,18 +1,30 @@
 <script>
+import { store } from '../storage';
+
 export default{
-    name:"Search Bar"
+    name:"Search Bar",
+    data(){
+        return {
+            store
+        }
+    },
+    methods: {
+        search(){
+            this.store.searchButtonClicked = true;
+        }
+    }
 }
 </script>
 <template>
     <div class="search-bar">
-        <input type="text" placeholder="Search Character">
-        <select name="" id="">
-            <option value="0">Select status</option>
+        <input type="text" placeholder="Search Character" v-model="this.store.inputName">
+        <select v-model="this.store.inputStatus">
+            <option value="all">Select status</option>
             <option value="alive">Alive</option>
             <option value="dead">Dead</option>
             <option value="undefined">Undefined</option>
         </select>
-        <button class="search">Search</button>
+        <button class="search" @click="search">Search</button>
         <button class="reset">Reset</button>
     </div>
 </template>

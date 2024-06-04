@@ -22,7 +22,7 @@ export default{
     }
   },
   created(){
-    axios.get('https://rickandmortyapi.com/api/character').then((result) => {
+    axios.get(this.store.apiUrl).then((result) => {
       this.store.rickAndMortyData = result.data.results
     })
   },
@@ -30,6 +30,21 @@ export default{
     HeaderComponent,
     MainComponent,
     FooterComponent
+  },
+  methods:{
+    generateUrl(){
+      console.log("ciao")
+    },
+    search(){
+      console.log("sto cercando")
+    }
+  },
+  beforeUpdate(){
+    console.log("qui")
+    if (this.store.searchButtonClicked){
+      this.search();
+      this.store.searchButtonClicked = false;
+    }
   }
 }
 </script>
