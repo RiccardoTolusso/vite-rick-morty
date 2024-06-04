@@ -2,6 +2,7 @@
 
 //COMPONENTS
 import CardComponent from "./CardComponent.vue"
+import SearchBarComponent from './SearchBarComponent.vue';
 
 // DATASET
 import { store } from "../storage"
@@ -14,13 +15,16 @@ export default{
         }
     },
     components: {
-        CardComponent
+        CardComponent,
+        SearchBarComponent
     }
 }
 </script>
 <template>
 <!-- MAIN -->
 <main>
+    
+    <SearchBarComponent />
     <div class="grid">
         <CardComponent v-for="character in store.rickAndMortyData" :character="character"/>
     </div>
